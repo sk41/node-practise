@@ -7,33 +7,24 @@
         button {
             color: blue;
             background-color: yellow;
-            /* margin-top: 30px; */
-           
             height: 50px;
         }
 
         img {
-          
             width: 500px;
             height: 500px;
             margin-right: 100px;
             margin-left: 100px;
         }
 
-      .out{
+        .out {
             text-align: center;
-            background:bisque;
+            background: bisque;
         }
 
-    .in{
-            /* height: 100px;
-            width:200px; */
-           
+        .in {
             margin: 0 auto;
-
-        
         }
-        
     </style>
     <script>
         var images = [
@@ -46,17 +37,14 @@
 
         function next() {
             var slider = document.getElementById("slider");
-            num++;
-            if (num >= images.length) {
-                num = 0;
-            }
+            num = (++num)%images.length;
             slider.src = images[num];
         }
 
         function prev() {
             var slider = document.getElementById("slider");
-            num--;
-            if (num < 0) {
+           
+            if ((--num) < 0) {
                 num = images.length - 1;
             }
             slider.src = images[num];
@@ -64,31 +52,25 @@
 
 
     </script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
     <div class="out">
-    <div class="in">
-        <button onclick="prev()"> Prev </button>
-        <img id="slider" src="http://www.sololearn.com/uploads/slider/1.jpg" width="200px" height="100px" />
-        <button onclick="next()"> Next </button>
+        <div class="in">
+            <button onclick="prev()"> Prev </button>
+            <img id="slider" src="http://www.sololearn.com/uploads/slider/1.jpg" width="200px" height="100px" />
+            <button onclick="next()"> Next </button>
         </div>
-        <!-- <audio controls autoplay loop>
-                <source src="http://www.sololearn.com/uploads/audio.mp3" type="audio/mpeg"> Audio element not supported by your browser.
-            </audio> -->
-            
-            
-
-    <div class="in">
+        <div class="in">
             <audio controls autoplay loop>
                 <source src="http://www.sololearn.com/uploads/audio.mp3" type="audio/mpeg">
             </audio>
-        </div> 
         </div>
-   
+    </div>
+
 </body>
 
 </html>
