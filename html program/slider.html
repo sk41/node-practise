@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Title</title>
+    <style>
+        button {
+            color: blue;
+            background-color: yellow;
+            height: 50px;
+        }
+
+        img {
+            width: 500px;
+            height: 500px;
+            margin-right: 100px;
+            margin-left: 100px;
+        }
+
+        .out {
+            text-align: center;
+            background: bisque;
+        }
+
+        .in {
+            margin: 0 auto;
+        }
+    </style>
+    <script>
+        var images = [
+            "http://www.sololearn.com/uploads/slider/1.jpg",
+            "http://www.sololearn.com/uploads/slider/2.jpg",
+            "http://www.sololearn.com/uploads/slider/3.jpg"
+
+        ];
+        var num = 0;
+
+        function next() {
+            var slider = document.getElementById("slider");
+            num = (++num)%images.length;
+            slider.src = images[num];
+        }
+
+        function prev() {
+            var slider = document.getElementById("slider");
+           
+            if ((--num) < 0) {
+                num = images.length - 1;
+            }
+            slider.src = images[num];
+        }
+
+
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="out">
+        <div class="in">
+            <button onclick="prev()"> Prev </button>
+            <img id="slider" src="http://www.sololearn.com/uploads/slider/1.jpg" width="200px" height="100px" />
+            <button onclick="next()"> Next </button>
+        </div>
+        <div class="in">
+            <audio controls autoplay loop>
+                <source src="http://www.sololearn.com/uploads/audio.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
+
+</body>
+
+</html>
