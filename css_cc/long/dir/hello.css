@@ -1,4 +1,17 @@
-p {
-    color:white;
+/* p {
+    color:black;
     background-color:gray;
+ } */
+
+#intro {
+    color: yellow;
+    background-color: gray;
  }
+
+ #intro .first em {
+    color : pink;
+    background-color: aqua;
+ }
+ 
+ .first {font-size: 200%;}
+
