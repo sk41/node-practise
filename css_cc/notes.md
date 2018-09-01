@@ -71,7 +71,7 @@
 
   ```
 
-  css
+  CSS
   ```
   #intro .first em {
     color: pink; 
