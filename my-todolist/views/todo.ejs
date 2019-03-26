@@ -1,28 +1,48 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <title>My todolist</title>
-        <style>
-            a {text-decoration: none; color: black;}
-        </style>
-    </head>
 
-    <body>
+<head>
+    <title>My todolist</title>
+    <style>
+        a {text-decoration: none; color: black;}
+       
+
+    </style>
+
+
+</head>
+
+<body bgcolor="grey">
+    <div align="center">
         <h1>My todolist</h1>
+    </div>
 
-        <ul>
+    <ul style="margin-left:40%">
         <% todolist.forEach(function(todo, index) { %>
-            <li><a href="/todo/delete/<%= index %>">✘</a> <%= todo %></li>
+        <li><a href="/todo/delete/<%= index %>">✘</a>
+            <%= todo %>
+        </li>
         <% }); %>
-        </ul>
-
+    </ul>
+    <div align="center">
         <form action="/todo/add/" method="post">
+
+
+
             <p>
                 <label for="newtodo">What shoud I do?</label>
                 <input type="text" name="newtodo" id="newtodo" autofocus />
                 <input type="submit" />
             </p>
+
+            </ul>
         </form>
-    </body>
+        <form action="/todo/deleteall/" method="post">
+            <input type="submit" value="Delete All" />
+        </form>
+    </div>
+
+</body>
+
 </html>
